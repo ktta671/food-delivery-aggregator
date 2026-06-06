@@ -26,3 +26,125 @@
             </button>
         </div>
     </header>
+ <main class="main">
+        <section class="hero">
+            <div class="hero__inner">
+                <h1 class="hero__title">Доставка еды из лучших ресторанов</h1>
+                <p class="hero__subtitle">Более 1000 ресторанов и кафе в вашем городе</p>
+                
+                <form class="hero__search-form" id="js-search-form">
+                    <div class="hero__search-wrapper">
+                        <span class="hero__search-icon">🔍</span>
+                        <input type="text" class="hero__search-input" id="js-search-input" placeholder="Найти ресторан или блюдо" autocomplete="off">
+                    </div>
+                    <button type="submit" class="hero__search-submit">Найти</button>
+                </form>
+
+                <div class="hero__tags">
+                    <button type="button" class="hero__tag-btn">🍕 Пицца</button>
+                    <button type="button" class="hero__tag-btn">🍔 Бургер</button>
+                    <button type="button" class="hero__tag-btn">🍣 Суши</button>
+                    <button type="button" class="hero__tag-btn">🍝 Паста</button>
+                    <button type="button" class="hero__tag-btn">🥗 Салат</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="restaurants" id="restaurants">
+            <div class="restaurants__container">
+                <h2 class="restaurants__title">Рестораны</h2>
+                <div class="restaurants__grid">
+                    
+                    <article class="card card--restaurant" data-name="Додо Пицца">
+                        <div class="card__image-box">
+                            <img src="dodo.jpg" alt="Додо Пицца" class="card__image" loading="lazy">
+                        </div>
+                        <div class="card__content">
+                            <h3 class="card__title">Додо Пицца</h3>
+                            <p class="card__meta">Пицца</p>
+                            <div class="card__info">
+                                <span class="card__rating">⭐ 5.0 (124 379)</span>
+                                <span class="card__time">40-50 мин</span>
+                            </div>
+                            <p class="card__delivery card__delivery--free">Бесплатно</p>
+                        </div>
+                    </article>
+
+                    <article class="card card--restaurant" data-name="Суши Маркет">
+                        <div class="card__image-box">
+                            <img src="sushi_market.jpg" alt="Суши Маркет" class="card__image" loading="lazy">
+                        </div>
+                        <div class="card__content">
+                            <h3 class="card__title">Суши Маркет</h3>
+                            <p class="card__meta">Суши, Роллы</p>
+                            <div class="card__info">
+                                <span class="card__rating">⭐ 4.6 (4 256)</span>
+                                <span class="card__time">30-40 мин</span>
+                            </div>
+                            <p class="card__delivery card__delivery--free">Бесплатно</p>
+                        </div>
+                    </article>
+
+                    <article class="card card--restaurant" data-name="Бургер Кинг">
+                        <div class="card__image-box">
+                            <img src="burger_king.jpg" alt="Бургер Кинг" class="card__image" loading="lazy">
+                        </div>
+                        <div class="card__content">
+                            <h3 class="card__title">Бургер Кинг</h3>
+                            <p class="card__meta">Бургеры, Фастфуд</p>
+                            <div class="card__info">
+                                <span class="card__rating">⭐ 4.8 (442 632)</span>
+                                <span class="card__time">25-35 мин</span>
+                            </div>
+                            <p class="card__delivery card__delivery--free">Бесплатно</p>
+                        </div>
+                    </article>
+
+                    <article class="card card--restaurant" data-name="itakeli">
+                        <div class="card__image-box">
+                            <img src="itakeli.jpg" alt="itakeli" class="card__image" loading="lazy">
+                        </div>
+                        <div class="card__content">
+                            <h3 class="card__title">itakeli</h3>
+                            <p class="card__meta">Пицца, Паста, Горячие Блюда, Салаты</p>
+                            <div class="card__info">
+                                <span class="card__rating">⭐ 4.7 (3 675)</span>
+                                <span class="card__time">30-45 мин</span>
+                            </div>
+                            <p class="card__delivery">🚲 1000 ₸</p>
+                        </div>
+                    </article>
+
+                    <article class="card card--restaurant" data-name="Cuore Di Leone">
+                        <div class="card__image-box">
+                            <img src="cuore_di_leone.jpg" alt="Cuore Di Leone" class="card__image" loading="lazy">
+                        </div>
+                        <div class="card__content">
+                            <h3 class="card__title">Cuore Di Leone</h3>
+                            <p class="card__meta">Гриль, Европейская кухня, Завтраки</p>
+                            <div class="card__info">
+                                <span class="card__rating">⭐ 4.9 (2 482)</span>
+                                <span class="card__time">40-50 мин</span>
+                            </div>
+                            <p class="card__delivery">🚲 500 ₸</p>
+                        </div>
+                    </article>
+
+                    <article class="card card--restaurant" data-name="Coffee Boom">
+                        <div class="card__image-box">
+                            <img src="coffee_boom.jpg" alt="Coffee Boom" class="card__image" loading="lazy">
+                        </div>
+                        <div class="card__content">
+                            <h3 class="card__title">Coffee Boom</h3>
+                            <p class="card__meta">Кофе, Завтраки, Салаты, Десерты</p>
+                            <div class="card__info">
+                                <span class="card__rating">⭐ 4.7 (3 926)</span>
+                                <span class="card__time">15-25 мин</span>
+                            </div>
+                            <p class="card__delivery card__delivery--pickup">Самовывоз</p>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
