@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ДоставкаЕды — Агрегатор доставки еды из лучших ресторанов</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="page">
+
+    <header class="header header--sticky">
+        <div class="header__container">
+            <a href="#" class="header__logo-link" id="js-logo-trigger">
+                <span class="header__logo-icon">🍕</span> ДоставкаЕды
+            </a>
+            <nav class="header__nav">
+                <a href="#restaurants" class="header__nav-link">Рестораны</a>
+                <a href="#dishes" class="header__nav-link">Блюда</a>
+                <button type="button" class="header__nav-link header__nav-link--btn" id="js-contacts-trigger">Контакты</button>
+            </nav>
+            <button type="button" class="header__cart-btn" id="js-cart-trigger" aria-label="Открыть корзину">
+                <svg class="header__cart-icon" viewBox="0 0 24 24" width="24" height="24">
+                    <path fill="currentColor" d="M17.21 9l-4.38-6.56a1 1 0 0 0-1.66 0L6.79 9H2a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1h.08l1.38 9a3 3 0 0 0 3 2.54h11.08a3 3 0 0 0 3-2.54l1.38-9h.08a1 1 0 0 0 1-1v-1a1 1 0 0 0-1-1h-4.79zM11.21 4.79L14 9h-5.58l2.79-4.21zM19.14 20.12A1 1 0 0 1 18.16 21H5.84a1 1 0 0 1-.98-.88L3.51 11h16.98l-1.35 9.12z"/>
+                </svg>
+                <span class="header__cart-count" id="js-cart-count">0</span>
+            </button>
+        </div>
+    </header>
