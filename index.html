@@ -294,3 +294,72 @@
             </div>
         </div>
     </aside>
+     
+    <dialog class="modal-dialog" id="js-contacts-modal">
+        <div class="modal-dialog__wrapper">
+            <button type="button" class="modal-dialog__close" id="js-contacts-close">&times;</button>
+            <div class="modal-dialog__grid">
+                
+                <div class="modal-dialog__info">
+                    <h2 class="modal-dialog__title">Свяжитесь с нами</h2>
+                    <p class="modal-dialog__subtitle">Мы всегда рады помочь вам с любыми вопросами</p>
+                    
+                    <ul class="modal-dialog__contact-list">
+                        <li class="modal-dialog__contact-item">
+                            <span class="modal-dialog__item-icon">📞</span>
+                            <div>
+                                <p class="modal-dialog__item-label">Телефон</p>
+                                <a href="tel:+77761408487" class="modal-dialog__item-value">+7 (776) 140-84-87</a>
+                            </div>
+                        </li>
+                        <li class="modal-dialog__contact-item">
+                            <span class="modal-dialog__item-icon">✉️</span>
+                            <div>
+                                <p class="modal-dialog__item-label">Email</p>
+                                <a href="mailto:info@edadostavka.ru" class="modal-dialog__item-value">info@edadostavka.ru</a>
+                            </div>
+                        </li>
+                        <li class="modal-dialog__contact-item">
+                            <span class="modal-dialog__item-icon">📍</span>
+                            <div>
+                                <p class="modal-dialog__item-label">Адрес</p>
+                                <p class="modal-dialog__item-value">г. Петропавловск, ул. Карима Сутюшева, 60, "Центральный", офис 505</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="modal-dialog__form-block">
+                    <h3 class="modal-dialog__form-title">Напишите нам</h3>
+                    <form class="modal-dialog__form" id="js-feedback-form" novalidate>
+                        <div class="modal-dialog__field">
+                            <label class="modal-dialog__label" for="form-name">Ваше имя</label>
+                            <input type="text" class="modal-dialog__input" id="form-name" placeholder="Иван Иванов">
+                            <span class="modal-dialog__error-msg" id="error-name"></span>
+                        </div>
+                        <div class="modal-dialog__field">
+                            <label class="modal-dialog__label" for="form-email">Email</label>
+                            <input type="email" class="modal-dialog__input" id="form-email" placeholder="ivan@gmail.com">
+                            <span class="modal-dialog__error-msg" id="error-email"></span>
+                        </div>
+                        <div class="modal-dialog__field">
+                            <label class="modal-dialog__label" for="form-phone">Телефон</label>
+                            <input type="text" class="modal-dialog__input" id="form-phone" placeholder="+7 (___) ___-__-__">
+                            <span class="modal-dialog__error-msg" id="error-phone"></span>
+                        </div>
+                        <div class="modal-dialog__field">
+                            <label class="modal-dialog__label" for="form-message">Сообщение</label>
+                            <textarea class="modal-dialog__textarea" id="form-message" placeholder="Расскажите, чем мы можем помочь..."></textarea>
+                            <span class="modal-dialog__error-msg" id="error-message"></span>
+                        </div>
+                        <button type="submit" class="modal-dialog__submit-btn">Отправить сообщение</button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </dialog>
+
+    <script src="app.js"></script>
+</body>
+</html>
