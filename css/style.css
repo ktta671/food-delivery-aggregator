@@ -354,3 +354,110 @@ body {
     justify-content: center;
     transition: background-color 0.15s ease;
 }
+
+.card__add-btn:hover,
+.card__add-btn:active {
+    background-color: var(--color-btn-hover) !important;
+    color: var(--color-light) !important;
+}
+
+.cart-drawer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 200;
+    visibility: hidden;
+    transition: visibility 0.3s ease;
+}
+
+.cart-drawer--open {
+    visibility: visible;
+}
+
+.cart-drawer__overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.cart-drawer--open .cart-drawer__overlay {
+    opacity: 1;
+}
+
+.cart-drawer__content {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+    max-width: 420px;
+    height: 100%;
+    background-color: var(--color-light);
+    box-shadow: -5px 0 25px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+    transform: translateX(100%);
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cart-drawer--open .cart-drawer__content {
+    transform: translateX(0);
+}
+
+.cart-drawer__header {
+    padding: 20px;
+    border-bottom: 1px solid #eeeeee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cart-drawer__close {
+    background: none;
+    border: none;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.cart-drawer__empty {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    text-align: center;
+}
+
+.cart-drawer__empty-icon {
+    font-size: 64px;
+    margin-bottom: 15px;
+}
+
+.cart-drawer__empty-title {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.cart-drawer__empty-subtitle {
+    color: var(--color-text-muted);
+}
+
+.cart-drawer__filled {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.cart-drawer__list {
+    flex: 1;
+    overflow-y: auto;
+    list-style: none;
+    padding: 20px;
+}
