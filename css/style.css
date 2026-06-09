@@ -534,3 +534,127 @@ body {
 .cart-drawer__checkout-btn:active {
     background-color: var(--color-btn-hover);
 }
+
+.modal-dialog {
+    border: none;
+    border-radius: 16px;
+    max-width: 840px;
+    width: calc(100% - 40px);
+    margin: auto;
+    padding: 0;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.modal-dialog__backdrop {
+    background-color: rgba(0, 0, 0, 0.5) !important;
+}
+
+.modal-dialog__wrapper {
+    position: relative;
+    padding: 40px;
+}
+
+.modal-dialog__close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.modal-dialog__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.modal-dialog__title {
+    font-size: 28px;
+    margin-bottom: 8px;
+}
+
+.modal-dialog__subtitle {
+    color: var(--color-text-muted);
+    margin-bottom: 30px;
+}
+
+.modal-dialog__contact-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.modal-dialog__contact-item {
+    display: flex;
+    gap: 15px;
+}
+
+.modal-dialog__item-label {
+    font-size: 12px;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+}
+
+.modal-dialog__item-value {
+    color: var(--color-dark);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.modal-dialog__field {
+    margin-bottom: 16px;
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-dialog__label {
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 6px;
+}
+
+.modal-dialog__input, .modal-dialog__textarea {
+    padding: 10px 12px;
+    border: 1px solid #cccccc;
+    border-radius: 6px;
+    font-size: 15px;
+    outline: none;
+}
+
+.modal-dialog__textarea {
+    resize: none;
+    height: 100px;
+}
+
+.modal-dialog__input--error, .modal-dialog__textarea--error {
+    border-color: var(--color-error);
+    background-color: #fff8f8;
+}
+
+.modal-dialog__error-msg {
+    color: var(--color-error);
+    font-size: 12px;
+    margin-top: 4px;
+    min-height: 16px;
+}
+
+.modal-dialog__submit-btn {
+    background-color: var(--color-btn-default);
+    color: var(--color-light);
+    border: none;
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.2s ease;
+}
+
+.modal-dialog__submit-btn:hover,
+.modal-dialog__submit-btn:active {
+    background-color: var(--color-btn-hover);
+}
