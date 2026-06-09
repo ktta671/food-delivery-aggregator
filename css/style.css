@@ -738,3 +738,26 @@ body {
     font-size: 14px;
     color: var(--color-text-muted);
 }
+
+.is-hidden {
+    display: none !important;
+}
+
+@media (max-width: 1024px) {
+    .dishes__grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .modal-dialog__grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    .footer__container {
+        flex-direction: column;
+    }
+    .dishes__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
