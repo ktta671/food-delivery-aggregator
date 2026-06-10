@@ -117,3 +117,96 @@ document.addEventListener("DOMContentLoaded", () => {
         }
         saveCart();
     });
+    
+    const toggleCartDrawer = () => cartDrawer.classList.toggle("cart-drawer--open");
+    if (cartTrigger) cartTrigger.addEventListener("click", toggleCartDrawer);
+    if (cartClose) cartClose.addEventListener("click", toggleCartDrawer);
+    if (cartOverlay) cartOverlay.addEventListener("click", toggleCartDrawer);
+
+    const openContacts = () => contactsModal.showModal();
+    const closeContacts = () => contactsModal.close();
+
+    if (contactsTrigger) contactsTrigger.addEventListener("click", openContacts);
+    if (contactsClose) contactsClose.addEventListener("click", closeContacts);
+    if (footerContactsTrigger) {
+        footerContactsTrigger.addEventListener("click", openContacts);
+    }
+
+    const phoneInput = document.getElementById("form-phone");
+    if (phoneInput) {
+        phoneInput.addEventListener("input", (e) => {
+            let matrix = "+7 (___) ___-__-__",
+                i = 0,
+                def = matrix.replace(/\D/g, ""),
+                val = e.target.value.replace(/\D/g, "");
+            
+            if (def.length >= val.length) val = def;
+            
+            e.target.value = matrix.replace(/./g, function(a) {
+                return /[_\d]/.test(a) && i < val.length ? val.charAt(i++) : i >= val.length ? "" : a;
+            });
+        });
+    }
+
+    const feedbackForm = document.getElementById("js-feedback-form");
+    
+    const showError = (inputEl, errorEl, message) => {
+        inputEl.classList.add("modal-dialog__input--error");
+        errorEl.textContent = message;
+    };
+
+    const clearError = (inputEl, errorEl) => {
+        inputEl.classList.remove("modal-dialog__input--error");
+        errorEl.textContent = "";
+    };
+
+    if (feedbackForm) {
+        feedbackForm.addEventListener("submit", (e) => {
+            e.preventDefault();
+            let isValid = true;
+
+            const nameInput = document.getElementById("form-name");
+            const errorName = document.getElementById("error-name");
+            if (nameInput.value.trim().length < 2) {
+                showError(nameInput, errorName, "Имя должно содержать не менее 2 символов");
+                isValid = false;
+            } else {
+                clearError(nameInput, errorName);
+            }
+
+            const emailInput = document.getElementById("form-email");
+            const errorEmail = document.getElementById("error-email");
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(emailInput.value.trim())) {
+                showError(emailInput, errorEmail, "Введите корректный email");
+                isValid = false;
+            } else {
+                clearError(emailInput, errorEmail);
+            }
+
+            const errorPhone = document.getElementById("error-phone");
+            if (phoneInput && phoneInput.value.replace(/\D/g, "").length < 11) {
+                showError(phoneInput, errorPhone, "Введите полный номер телефона");
+                isValid = false;
+            } else {
+                if (phoneInput) clearError(phoneInput, errorPhone);
+            }
+
+            const messageInput = document.getElementById("form-message");
+            const errorMessage = document.getElementById("error-message");
+            if (messageInput.value.trim().length < 10) {
+                messageInput.classList.add("modal-dialog__textarea--error");
+                errorMessage.textContent = "Сообщение должно быть длиннее 10 символов";
+                isValid = false;
+            } else {
+                messageInput.classList.remove("modal-dialog__textarea--error");
+                errorMessage.textContent = "";
+            }
+
+            if (isValid) {
+                feedbackForm.reset();
+                contactsModal.close();
+                console.log("Форма успешно отправлена.");
+            }
+        });
+    }
