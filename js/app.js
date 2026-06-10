@@ -210,3 +210,57 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     }
+    
+    const filterSearch = () => {
+        const query = searchInput.value.toLowerCase().trim();
+        
+        let hasVisibleRestaurants = false;
+        let hasVisibleDishes = false;
+
+        searchCards.forEach(card => {
+            let name = card.dataset.name ? card.dataset.name.toLowerCase().trim() : "";
+            
+            if (!name) {
+                const titleEl = card.querySelector(".card__title");
+                if (titleEl) {
+                    name = titleEl.textContent.toLowerCase().trim();
+                }
+            }
+            
+            if (name.includes(query)) {
+                card.classList.remove("is-hidden");
+                
+                if (card.classList.contains("card--restaurant")) {
+                    hasVisibleRestaurants = true;
+                }
+                if (card.classList.contains("card--dish")) {
+                    hasVisibleDishes = true;
+                }
+            } else {
+                card.classList.add("is-hidden");
+            }
+        });
+
+        const restaurantsSection = document.getElementById("restaurants");
+        const dishesSection = document.getElementById("dishes");
+
+        if (query === "") {
+            if (restaurantsSection) restaurantsSection.classList.remove("is-hidden");
+            if (dishesSection) dishesSection.classList.remove("is-hidden");
+        } else {
+            if (restaurantsSection) {
+                if (hasVisibleRestaurants) {
+                    restaurantsSection.classList.remove("is-hidden");
+                } else {
+                    restaurantsSection.classList.add("is-hidden");
+                }
+            }
+            if (dishesSection) {
+                if (hasVisibleDishes) {
+                    dishesSection.classList.remove("is-hidden");
+                } else {
+                    dishesSection.classList.add("is-hidden");
+                }
+            }
+        }
+    };
