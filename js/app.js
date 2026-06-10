@@ -80,3 +80,40 @@ document.addEventListener("DOMContentLoaded", () => {
 
         cartTotalPrice.textContent = `${totalSum.toLocaleString()} ₸`;
     };
+    
+    document.querySelectorAll(".js-add-to-cart").forEach(button => {
+        button.addEventListener("click", (e) => {
+            const card = e.target.closest(".card--dish");
+            if (!card) return;
+
+            const id = card.dataset.id;
+            const name = card.dataset.name || card.querySelector(".card__title")?.textContent.trim() || "Блюдо";
+            const price = parseInt(card.dataset.price, 10) || 0;
+
+            const existingItem = cart.find(item => item.id === id);
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                cart.push({ id, name, price, quantity: 1 });
+            }
+            saveCart();
+        });
+    });
+
+    cartList.addEventListener("click", (e) => {
+        const id = e.target.dataset.id;
+        if (!id) return;
+
+        const currentItem = cart.find(item => item.id === id);
+        if (!currentItem) return;
+
+        if (e.target.classList.contains("js-plus")) {
+            currentItem.quantity += 1;
+        } else if (e.target.classList.contains("js-minus")) {
+            currentItem.quantity -= 1;
+            if (currentItem.quantity <= 0) {
+                cart = cart.filter(item => item.id !== id);
+            }
+        }
+        saveCart();
+    });
