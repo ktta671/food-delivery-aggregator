@@ -264,3 +264,16 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         }
     };
+        if (searchForm) {
+        searchForm.addEventListener("submit", (e) => {
+            e.preventDefault();
+            filterSearch();
+        });
+    }
+    
+    if (searchInput) {
+        searchInput.addEventListener("input", filterSearch);
+    }
+
+    renderCart();
+});
